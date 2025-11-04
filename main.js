@@ -4,9 +4,9 @@ const caixaAlternativas = document.querySelector(".caixa-alternativas");
 const caixaResultado = document.querySelector(".caixa-resultado");
 const textoResultado = document.querySelector(".texto-resultado");
 
+// CORREÇÃO: Removido o objeto e o array extras que envolviam a lista de perguntas.
+// Agora, 'perguntas' é um array de objetos de perguntas.
 const perguntas = [
-    {
-        [
     {
         "enunciado": "Como você controla os gastos mensais?",
         "alternativas": [
@@ -112,7 +112,6 @@ const perguntas = [
             }
         ]
     }
-]
 ];
 
 let atual = 0;
@@ -126,7 +125,7 @@ function mostraPergunta() {
         return;
     }
 
-    perguntaAtual = perguntas[atual]
+    perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
     caixaAlternativas.textContent = " ";
     mostraAlternativas();
@@ -136,24 +135,28 @@ function mostraAlternativas() {
     for (const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa.texto;
-        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa))
+        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
         caixaAlternativas.appendChild(botaoAlternativas);
     }
 }
 
 function respostaSelecionada(opcaoSelecionada) {
-    const afirmacoes = opcaoSelecionada.afirmacao;
-    historiaFinal += afirmacoes + " ";
-    atual++
+    // CORREÇÃO/AJUSTE: As afirmações são um array, é melhor juntá-las com um separador.
+    // Usei <br> para quebras de linha em HTML e um espaço.
+    const afirmacoes = opcaoSelecionada.afirmacao.join(" | "); 
+    
+    // Adicione um separador visual entre as afirmações de diferentes perguntas.
+    historiaFinal += afirmacoes + " <br><br> "; 
+    
+    atual++;
     mostraPergunta();
 }
 
 function mostraResultado(){
     caixaPerguntas.textContent = "Se fosse possível manter suas contas sob controle, o resultado final poderá valer a pena?"
-    textoResultado.textContent = historiaFinal;
+    // Ajuste: usar innerHTML para renderizar as tags <br> adicionadas acima.
+    textoResultado.innerHTML = historiaFinal; 
     caixaAlternativas.textContent = " ";
 }
 
 mostraPergunta();
-
-
