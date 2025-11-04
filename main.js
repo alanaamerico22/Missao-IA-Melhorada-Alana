@@ -98,16 +98,16 @@ const perguntas = [
                 "texto": "Criar “limites de despesa” por categoria (lazer, delivery, roupas) em um aplicativo de orçamento.",
                 "afirmacao": [
                     "Você sente que limites pré-definidos evitam surpresas e mantêm o orçamento equilibrado.",
-                    "Sua **estratégia é de Prevenção Ativa**, estabelecendo barreiras financeiras claras para evitar o gasto excessivo.",
+                    "Sua estratégia é de Prevenção Ativa, estabelecendo barreiras financeiras claras para evitar o gasto excessivo.",
                     "Você confia na metodologia do orçamento para orientar suas compras, e não apenas na sua força de vontade."
                 ]
             },
             {
-                "texto": "Esperar 24 horas antes de fazer uma compra não planejada e reavaliar a real necessidade.",
+                "texto": "Esperar 24 horas antes de fazer uma compra não planejada e reavaliar a real necessidade.",
                 "afirmacao": [
                     "Você acredita que o intervalo de tempo reduz compras impulsivas e ajuda a refletir sobre prioridades.",
                     "Sua estratégia é de Mitigação da Impulsividade, usando o tempo como um filtro para a tomada de decisão.",
-                    "Seu hábito é de Reflexão Consciente**, reconhecendo o valor da pausa antes de se comprometer com um gasto supérfluo."
+                    "Seu hábito é de Reflexão Consciente, reconhecendo o valor da pausa antes de se comprometer com um gasto supérfluo."
                 ]
             }
         ]
